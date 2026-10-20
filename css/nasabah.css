@@ -1,0 +1,37 @@
+:root {
+  --nasabah-bg: #020617;
+  --nasabah-surface: rgba(15, 23, 42, 0.95);
+  --nasabah-border: rgba(148, 163, 184, 0.2);
+  --nasabah-accent: #84cc16;
+  --nasabah-text: #f8fafc;
+}
+
+body {
+  background: linear-gradient(135deg, #020617 0%, #111827 100%);
+  color: var(--nasabah-text);
+}
+
+header {
+  background: rgba(2, 6, 23, 0.9) !important;
+  border-bottom: 1px solid var(--nasabah-border) !important;
+}
+
+nav a {
+  border-radius: 999px;
+}
+
+nav a:hover,
+nav a.active {
+  color: var(--nasabah-accent) !important;
+  background: rgba(132, 204, 22, 0.12) !important;
+}
+
+.card,
+.panel,
+.stat-card,
+.summary-box {
+  background: var(--nasabah-surface);
+  border: 1px solid var(--nasabah-border);
+  border-radius: 20px;
+  box-shadow: 0 12px 30px rgba(2, 6, 23, 0.2);
+}

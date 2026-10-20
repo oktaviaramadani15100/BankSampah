@@ -1,0 +1,303 @@
+/* ==========================================================================
+   1. REGULASI VARIABEL & RESET DASAR GLOBAL
+   ========================================================================== */
+:root {
+    --bg-main: #09090b;
+    --bg-card: #0e0e0e;
+    --bg-darker: #050505;
+    --border-color: #1f1f23;
+    --text-primary: #f4f4f5;
+    --text-secondary: #a1a1aa;
+    --text-muted: #52525b;
+    --lime-primary: #8ae61a;
+    --lime-hover: #7cd015;
+    --lime-glow: rgba(138, 230, 26, 0.2);
+    --emerald-alert: #34d399;
+    --rose-alert: #f43f5e;
+    --amber-alert: #fbbf24;
+}
+
+body {
+    background-color: var(--bg-main);
+    color: var(--text-primary);
+    font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    -webkit-font-smoothing: antialiased;
+}
+
+/* ==========================================================================
+   2. LAYOUT KONTEN UTAMA & HEADER CONSOLE
+   ========================================================================== */
+.container-main {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 48px 24px;
+    display: flex;
+    flex-direction: column;
+    gap: 28px;
+    box-sizing: border-box;
+}
+
+.page-header {
+    border-bottom: 1px solid var(--border-color);
+    padding-bottom: 16px;
+    margin-bottom: 8px;
+}
+
+.page-header h1 {
+    font-size: 26px;
+    font-weight: 700;
+    letter-spacing: -0.03em;
+    color: #fff;
+    margin: 0;
+}
+
+.page-header p {
+    font-size: 13px;
+    color: var(--text-muted);
+    margin: 6px 0 0 0;
+}
+
+.form-label {
+    font-size: 11px;
+    font-weight: 600;
+    color: var(--text-muted);
+    text-transform: uppercase;
+    margin: 0;
+    letter-spacing: 0.03em;
+}
+
+/* ==========================================================================
+   3. BANNER INFORMASI ANTREAN (ALERT)
+   ========================================================================== */
+.info-banner {
+    background-color: rgba(251, 191, 36, 0.03);
+    border: 1px solid rgba(251, 191, 36, 0.15);
+    padding: 16px 20px;
+    border-radius: 14px;
+    font-size: 13px;
+    color: var(--text-secondary);
+    box-sizing: border-box;
+}
+
+.info-banner .banner-title {
+    font-weight: 700;
+    color: var(--amber-alert);
+    margin-bottom: 4px;
+}
+
+.info-banner p {
+    margin: 0;
+}
+
+/* ==========================================================================
+   4. ALIGNMENT GRID LAYOUT & KARTU METRIK STATISTIK
+   ========================================================================== */
+.grid-4-kolom {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 16px;
+}
+
+.stat-card-dashboard {
+    background-color: var(--bg-card);
+    border: 1px solid var(--border-color);
+    border-radius: 16px;
+    padding: 20px;
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    box-sizing: border-box;
+    transition: transform 0.2s, border-color 0.2s;
+}
+
+.stat-card-dashboard:hover {
+    border-color: var(--lime-primary);
+    transform: translateY(-2px);
+}
+
+.icon-wrapper-dash {
+    width: 48px;
+    height: 48px;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 18px;
+    flex-shrink: 0;
+}
+
+.card-content-text h3 {
+    font-size: 24px;
+    font-weight: 700;
+    color: #fff;
+    margin: 4px 0 0 0;
+    font-family: monospace;
+}
+
+/* ==========================================================================
+   5. KARTU LINK JALAN PINTAS (SHORTCUT CARD)
+   ========================================================================== */
+.grid-3-kolom {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 16px;
+}
+
+.action-link-card {
+    background-color: var(--bg-card);
+    border: 1px solid var(--border-color);
+    border-radius: 16px;
+    padding: 20px;
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    text-decoration: none;
+    box-sizing: border-box;
+    transition: all 0.25s ease-in-out;
+}
+
+.action-link-card:hover {
+    border-color: var(--lime-primary);
+    background-color: rgba(138, 230, 26, 0.01);
+    box-shadow: 0 0 15px var(--lime-glow);
+    transform: translateY(-2px);
+}
+
+.action-icon-box {
+    font-size: 20px;
+    color: var(--lime-primary);
+}
+
+.action-card-desc h3 {
+    font-size: 14px;
+    font-weight: 700;
+    color: #fff;
+    margin: 0;
+}
+
+.action-card-desc p {
+    font-size: 11px;
+    color: var(--text-muted);
+    margin: 2px 0 0 0;
+}
+
+/* ==========================================================================
+   6. TABEL LOG OPERASIONAL & RIWAYAT KUNJUNGAN
+   ========================================================================== */
+.table-section-wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+}
+
+.tabel-log-wrapper {
+    width: 100%;
+    overflow-x: auto;
+    background-color: var(--bg-card);
+    border: 1px solid var(--border-color);
+    border-radius: 16px;
+    box-sizing: border-box;
+}
+
+.table-dash {
+    width: 100%;
+    border-collapse: collapse;
+    text-align: left;
+    font-size: 13px;
+}
+
+.table-dash th {
+    padding: 16px;
+    color: var(--text-muted);
+    font-weight: 600;
+    text-transform: uppercase;
+    font-size: 11px;
+    background-color: rgba(255, 255, 255, 0.01);
+    border-bottom: 1px solid var(--border-color);
+}
+
+.table-dash td {
+    padding: 16px;
+    border-bottom: 1px solid rgba(31, 31, 35, 0.6);
+    vertical-align: middle;
+}
+
+.table-dash tr:last-child td {
+    border-bottom: none;
+}
+
+.table-dash tbody tr {
+    transition: all 0.2s ease;
+}
+
+.table-dash tbody tr:hover td {
+    background-color: rgba(138, 230, 26, 0.01) !important;
+    border-top-color: var(--lime-primary);
+    border-bottom-color: var(--lime-primary);
+}
+
+.td-date {
+    color: var(--text-muted);
+    font-family: monospace;
+}
+
+.td-name {
+    font-weight: 600;
+    color: #fff;
+}
+
+.sub-id-text {
+    color: var(--text-muted);
+    font-size: 10px;
+    font-weight: 400;
+}
+
+.badge-type {
+    background: rgba(138, 230, 26, 0.06);
+    border: 1px solid rgba(138, 230, 26, 0.15);
+    color: var(--lime-primary);
+    font-weight: 700;
+    font-size: 10px;
+    padding: 2px 8px;
+    border-radius: 4px;
+    text-transform: uppercase;
+}
+
+.td-weight {
+    font-weight: bold;
+    color: #fff;
+    font-family: monospace;
+}
+
+/* ==========================================================================
+   7. STATUS BADGES & EMPTY STATE
+   ========================================================================== */
+.status-badge {
+    font-size: 11px;
+    font-weight: 600;
+    padding: 2px 8px;
+    border-radius: 4px;
+}
+
+.status-selesai {
+    color: var(--emerald-alert);
+}
+
+.status-batal {
+    color: var(--rose-alert);
+}
+
+.status-rencana {
+    color: var(--amber-alert);
+}
+
+.empty-state {
+    padding: 40px 0;
+    text-align: center;
+    color: var(--text-muted);
+    font-style: italic;
+}
+

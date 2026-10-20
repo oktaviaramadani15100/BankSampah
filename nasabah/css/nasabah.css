@@ -1,0 +1,196 @@
+/* ==========================================================================
+   1. REGULASI VARIABEL & RESET DASAR GLOBAL
+   ========================================================================== */
+:root {
+    --bg-main: #09090b;
+    --bg-card: #0e0e0e;
+    --bg-darker: #050505;
+    --border-color: #1f1f23;
+    --text-primary: #f4f4f5;
+    --text-secondary: #a1a1aa;
+    --text-muted: #52525b;
+    --lime-primary: #8ae61a;
+    --lime-hover: #7cd015;
+    --lime-glow: rgba(138, 230, 26, 0.25);
+    --emerald-alert: #34d399;
+    --rose-alert: #f43f5e;
+    --amber-alert: #ffc107;
+}
+
+body {
+    background-color: var(--bg-main);
+    color: var(--text-primary);
+    font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    -webkit-font-smoothing: antialiased;
+}
+
+/* ==========================================================================
+   2. LAYOUT KONTEN UTAMA & HEADER WELCOME
+   ========================================================================== */
+.dashboard-container {
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 24px 16px;
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    box-sizing: border-box;
+}
+
+.welcome-section {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 16px;
+    border-bottom: 1px solid var(--border-color);
+    padding-bottom: 16px;
+}
+
+@media (min-width: 768px) {
+    .welcome-section {
+        flex-direction: row;
+        align-items: center;
+    }
+}
+
+.form-label {
+    font-size: 11px;
+    font-weight: 600;
+    color: var(--text-muted);
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    margin: 0;
+}
+
+/* ==========================================================================
+   3. NOTIFIKASI BANNER INFOMASI (ALERT)
+   ========================================================================== */
+.alert-banner, .alert {
+    padding: 16px;
+    border-radius: 12px;
+    display: flex;
+    gap: 12px;
+    align-items: start;
+    box-sizing: border-box;
+}
+
+.alert-sukses {
+    background-color: rgba(6, 78, 59, 0.1);
+    border: 1px solid #064e3b;
+    color: var(--emerald-alert);
+}
+
+.alert-warning {
+    background-color: rgba(244, 63, 94, 0.05);
+    border: 1px solid rgba(244, 63, 94, 0.2);
+    color: var(--rose-alert);
+}
+
+/* ==========================================================================
+   4. LAYOUT GRID WIDGET METRIK DENGAN ANIMASI GLOW
+   ========================================================================== */
+.grid-metrics {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 16px;
+}
+
+.grid-actions {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 16px;
+}
+
+.metric-card, .action-card {
+    background-color: var(--bg-card);
+    border: 1px solid var(--border-color);
+    border-radius: 16px;
+    padding: 20px;
+    box-sizing: border-box;
+    transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1), 
+                border-color 0.3s cubic-bezier(0.4, 0, 0.2, 1), 
+                box-shadow 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.action-card {
+    text-decoration: none;
+    color: inherit;
+    text-align: center;
+}
+
+/* Efek Border Berpendar Neon-Lime ketika Kursor Menyentuh Card */
+.metric-card:hover, .action-card:hover {
+    transform: translateY(-3px);
+    border-color: var(--lime-primary) !important;
+    box-shadow: 0 0 20px var(--lime-glow);
+}
+
+/* ==========================================================================
+   5. TABEL LOG MUTASI RIWAYAT TRANSAKSI
+   ========================================================================== */
+.table-wrapper {
+    width: 100%;
+    overflow-x: auto;
+    background-color: rgba(255, 255, 255, 0.01);
+    border: 1px solid var(--border-color);
+    border-radius: 16px;
+    box-sizing: border-box;
+}
+
+.custom-table {
+    width: 100%;
+    border-collapse: collapse;
+    text-align: left;
+    font-size: 13px;
+}
+
+.custom-table th {
+    padding: 16px;
+    color: var(--text-muted);
+    font-weight: 600;
+    text-transform: uppercase;
+    font-size: 11px;
+    letter-spacing: 0.05em;
+    background-color: rgba(255, 255, 255, 0.02);
+    border-bottom: 1px solid var(--border-color);
+}
+
+.custom-table td {
+    padding: 16px;
+    border-bottom: 1px solid rgba(31, 31, 35, 0.6);
+    color: #d4d4d8;
+    vertical-align: middle;
+}
+
+.custom-table tr:last-child td {
+    border-bottom: none;
+}
+
+/* ==========================================================================
+   6. ELEMEN BUTTON INTERAKTIF
+   ========================================================================== */
+.btn-action-primary {
+    background-color: var(--lime-primary);
+    color: var(--bg-main);
+    font-weight: 700;
+    font-size: 13px;
+    padding: 12px 20px;
+    border-radius: 12px;
+    text-decoration: none;
+    text-align: center;
+    border: none;
+    cursor: pointer;
+    box-shadow: 0 4px 12px rgba(138, 230, 26, 0.15);
+    transition: background-color 0.2s ease, transform 0.2s ease, box-shadow 0.2s ease;
+    display: inline-block;
+    box-sizing: border-box;
+}
+
+.btn-action-primary:hover {
+    background-color: var(--lime-hover);
+    transform: translateY(-1px);
+    box-shadow: 0 6px 16px var(--lime-glow);
+}

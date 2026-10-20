@@ -1,0 +1,41 @@
+
+
+header, .admin-header {
+    position: fixed !important;
+    top: 20;
+    left: 0;
+    width: 100% !important;
+    z-index: 999;
+    box-sizing: border-box;
+    background-color: #050505;
+    border-bottom: 1px solid var(--border-color);
+    height: 70px; 
+}
+
+
+@media (max-width: 991px) {
+    header, .admin-header {
+        overflow-x: auto;
+        white-space: nowrap;
+        -webkit-overflow-scrolling: touch;
+    }
+}
+
+.dashboard-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    box-sizing: border-box;
+
+    padding: 110px 20px 40px 20px; 
+}
+
+
+@media (max-width: 767px) {
+    .dashboard-container {
+     
+        padding-top: 100px; 
+    }
+}
